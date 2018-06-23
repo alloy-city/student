@@ -13,7 +13,7 @@ export function setPlaylist() {
     }
 
     $.ajax({
-        url: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=" + playList + "&fields=items(snippet(title)%2Csnippet(thumbnails(default(url)))%2Csnippet(position)%2Csnippet(resourceId(videoId)))&key=" + googleAPIkey,
+        url: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=" + playList + "&fields=items(snippet(title)%2Csnippet(thumbnails(default(url)))%2Csnippet(position)%2Csnippet(resourceId(videoId)))&key=" + googleAPIKey,
         type: "GET",
         async: false,
         dataType: 'jsonp',
