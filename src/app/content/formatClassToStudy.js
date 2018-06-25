@@ -1,6 +1,7 @@
 import { markUpResourceToStudy } from './markUpResourceToStudy'
 import { getOneAnswer } from './getOneAnswer'
 import { activateOrderListFunctionality } from './activateOrderListFunctionality'
+import { addBackToTopButton } from './addBackToTopButton'
 
 export function formatClassToStudy(EClass) {
     let header = `
@@ -30,4 +31,6 @@ export function formatClassToStudy(EClass) {
             activateOrderListFunctionality(Student.Content.selectedEclass.order[i]._id)
         }
     }
+
+    addBackToTopButton()
 }

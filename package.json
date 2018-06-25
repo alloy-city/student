@@ -1,19 +1,19 @@
 {
-  "name": "alloy-bundle",
-  "version": "0.9.0",
-  "description": "Provides Student access level functionality to Alloy City clients.",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "npx webpack --config webpack.dev.config.js",
-    "build:prod": "npx webpack --config webpack.prod.config.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "ifdef-loader": "^2.0.3",
-    "webpack": "4.8.3",
-    "webpack-cli": "2.1.4"
-  }
+    "name": "alloy-bundle",
+    "version": "0.9.1",
+    "description": "Provides Student access level functionality to Alloy City clients.",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:dev": "npx webpack --config webpack.dev.config.js",
+        "build:prod": "npx webpack --config webpack.prod.config.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {
+        "ifdef-loader": "^2.0.3",
+        "webpack": "4.8.3",
+        "webpack-cli": "2.1.4"
+    }
 }
