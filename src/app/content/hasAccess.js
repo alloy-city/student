@@ -12,7 +12,9 @@ function hasAccess(_id) {
 }
 
 function hasAccessLessons(lessons){
-    console.log(lessons)
+    /// #if DEBUG
+    // console.log(lessons)
+    /// #endif
 
     for (let lesson of lessons){
         if (!hasAccess(lesson)) return false

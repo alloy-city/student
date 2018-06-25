@@ -21,7 +21,9 @@ function openChapter(themeIndex, _id, ownsAll) {
                 description.innerText = chapter.description
 
                 lessons.sort(compare)
-                console.log(lessons)
+                /// #if DEBUG
+                // console.log(lessons)
+                /// #endif
 
                 // clear content container
                 container.innerHTML = ""

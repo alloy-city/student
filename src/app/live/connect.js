@@ -6,7 +6,7 @@ function SocketEClassConnect(socket) {
     
     socket.on('welcome', (data) => {
         /// #if DEBUG
-        //console.log(data);
+        // console.log(data);
         /// #endif
         
         let user = {
