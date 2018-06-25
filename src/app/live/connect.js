@@ -25,6 +25,7 @@ function SocketEClassConnect(socket) {
         // console.log(`Teacher ${teacher.name}/${teacher._id} present.`);
         /// #endif
 
+        
         let previousMessage = document.getElementById("teacher-present-message")
         if (previousMessage) previousMessage.parentElement.remove()
         notify(`${string.alerts.teacherPresent[0]} ${teacher.name} ${string.alerts.teacherPresent[1]}`, "info", false)
@@ -32,8 +33,16 @@ function SocketEClassConnect(socket) {
             show(`<p id="teacher-present-message">${string.alerts.teacherPresent[0]} ${teacher.name} ${string.alerts.teacherPresent[1]}. ${string.commons.goToThe_f} <a onclick="ActiveTab.setTab('classroom')" role="button">${string.tabs.classRoomTab}</a></p>`)
         }
     })
-
+    
     socket.on("instruction", interpretInstruction);
+    
+    socket.on("message", data => {
+        /// #if DEBUG
+        // console.log(data)
+        /// #endif
+
+        show(`${string.messages.suggestion[0]} <a onclick="Student.Product.view('${data.message}')" role="button">${string.messages.suggestion[1]}</a>.`, data.message)
+    })
 }
 
 export { SocketEClassConnect }
