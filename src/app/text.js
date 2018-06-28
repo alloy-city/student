@@ -12,7 +12,9 @@ export function applyText() {
     $("#tab-settings").text(string.tabs.settingsTab);
 
     // footer
-    $("#reserved").text(string.reserved);
+    let about = document.getElementById("about-us")
+    about.setAttribute("href", string.footer.aboutUsURL)
+    about.innerText = string.footer.aboutUsText
 
     //whatsApp
     $(".enter-button").text(string.buttons.enter);
