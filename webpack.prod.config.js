@@ -7,7 +7,7 @@ const opts = {
 };
 
 module.exports = {
-    entry: './src/app/index.js',
+    entry: './src/index.js',
     module: {
         rules: [{
             use: [{ loader: "ifdef-loader", options: opts }],
