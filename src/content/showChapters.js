@@ -1,4 +1,5 @@
 import { hasAccess, hasAccessLessons } from "./hasAccess"
+import { prepareChapterDescription } from './prepareChapterDescription'
 
 function showChapters(themeId) {
     /// #if DEBUG
@@ -28,7 +29,7 @@ function showChapters(themeId) {
                     <div class="thumbnail chapter-card">
                         <img src="/images/chapter-icons/${Auth.chapters[themeId][i].icon ? Auth.chapters[themeId][i].icon : "chapter-no-icon.png"}" alt="">
                         <h4>${Auth.chapters[themeId][i].title}</h4>
-                        <p>${Auth.chapters[themeId][i].description.length > 0 ? Auth.chapters[themeId][i].description : string.classroom.chapterGenericDescription}</p>
+                        <p>${prepareChapterDescription(Auth.chapters[themeId][i].description)}</p>
                         <h3><br></h3>
                         <button class="btn btn-default btn-sm pull-right" type="button" onclick="Student.Content.openChapter(${themeId}, '${Auth.chapters[themeId][i]._id}', true)">${string.commons.open}</button>
                     </div>
@@ -39,7 +40,7 @@ function showChapters(themeId) {
                     <div class="thumbnail chapter-card">
                         <img src="/images/chapter-icons/${Auth.chapters[themeId][i].icon ? Auth.chapters[themeId][i].icon : "chapter-no-icon.png"}" alt="">
                         <h4>${Auth.chapters[themeId][i].title}</h4>
-                        <p>${Auth.chapters[themeId][i].description.length > 0 ? Auth.chapters[themeId][i].description : string.classroom.chapterGenericDescription}</p>
+                        <p>${prepareChapterDescription(Auth.chapters[themeId][i].description)}</p>
                         <h3>${ numberToBRL(Auth.chapters[themeId][i].price)}</h3>
                         <button class="btn btn-primary btn-sm" type="button" onclick="Student.Product.view('${Auth.chapters[themeId][i]._id}')">${string.buttons.buy}</button>
                         <button class="btn btn-default btn-sm" type="button" onclick="Student.Content.openChapter(${themeId}, '${Auth.chapters[themeId][i]._id}', false)">${string.commons.open}</button>
