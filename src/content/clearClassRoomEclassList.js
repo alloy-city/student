@@ -1,3 +1,3 @@
 export function clearClassRoomEclassList() {
-    document.getElementById("classroom-display-eclasses").innerHTML = ""
+    document.getElementById("material-display-eclasses").innerHTML = ""
 }

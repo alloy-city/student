@@ -18,7 +18,7 @@ export function formatClassToStudy(EClass) {
     }
 
     resources += '</div>'
-    $('#classroom-display-eclass').append(header + resources)
+    $('#material-display-eclass').append(header + resources)
 
     if (Student.Content.selectedEclass.openQuestions.length > 0) {
         for (let i = 0; i < Student.Content.selectedEclass.openQuestions.length; i++) {

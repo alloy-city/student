@@ -32,5 +32,5 @@ export function markUpClassRoomEclassList(arr) {
       </tr>`
     }
     markUp = markUp + '</table>';
-    $('#classroom-display-eclasses').append(markUp);
+    $('#material-display-eclasses').append(markUp);
 }

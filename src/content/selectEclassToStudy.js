@@ -8,6 +8,6 @@ export function selectEclassToStudy(_id) {
         clearClassRoomEclassDisplay()
         hideNavigation()
         formatClassToStudy(lesson)
-        document.getElementById("classroom-display-eclass").scrollIntoView()
+        document.getElementById("material-display-eclass").scrollIntoView()
     })
 }

@@ -2,6 +2,7 @@
 function activeTab(){
     let tabs = [
         "classroom",
+        "material",
         "whatsapp",
         "vids",
         "training",
@@ -10,7 +11,7 @@ function activeTab(){
         "settings"
     ]
 
-    if (!localStorage.activeTab) localStorage.setItem("activeTab", tabs[1])
+    if (localStorage.activeTab == tabs[0] || !localStorage.activeTab) localStorage.setItem("activeTab", tabs[1])
     setTab(localStorage.activeTab)
 }
 

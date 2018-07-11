@@ -3,7 +3,7 @@ export function applyText() {
     $("#payment_methods").text(string.payment.methods);
 
     // tabs
-    $("#tab-classroom").text(string.tabs.classRoomTab);
+    $("#tab-material").text(string.tabs.material);
     $("#tab-whatsapp").text(string.tabs.whatsappTab);
     $("#tab-vids").text(string.tabs.videosTab);
     $("#tab-training").text(string.tabs.gamesTab);

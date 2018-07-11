@@ -2,11 +2,15 @@ import { displayResource } from './display-resource'
 import { retractResource } from './retract-resource'
 import { controlAudio, audios } from '../content/audio'
 import { controlVideo } from '../content/video'
+import { setTab } from '../active-tab'
 
 function interpretInstruction(instruction) {
     /// #if DEBUG
     // console.log(instruction)
     /// #endif
+    if (localStorage.activeTab != "classroom"){
+        setTab("classroom")
+    }
 
     if (instruction.type == "clear board") {
         $('#classroom-display-eclass').html('')

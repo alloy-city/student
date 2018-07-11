@@ -25,7 +25,12 @@ function SocketEClassConnect(socket) {
         // console.log(`Teacher ${teacher.name}/${teacher._id} present.`);
         /// #endif
 
-        
+        document.getElementById("desktop").children[0].prepend(htmlToElement(`
+            <li role="presentation">
+                <a id="tab-classroom" onclick="ActiveTab.save('classroom')" data-toggle="tab" href="#classroom">${string.tabs.classRoomTab}</a>
+            </li>
+        `))
+
         let previousMessage = document.getElementById("teacher-present-message")
         if (previousMessage) previousMessage.parentElement.remove()
         notify(`${string.alerts.teacherPresent[0]} ${teacher.name} ${string.alerts.teacherPresent[1]}`, "info", false)

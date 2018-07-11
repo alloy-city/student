@@ -1,5 +1,5 @@
 function addBackToTopButton(){
-    let display = document.getElementById("classroom-display-eclass")
+    let display = document.getElementById("material-display-eclass")
 
     let button = document.createElement("h1")
     button.classList.add("text-right")
