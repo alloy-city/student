@@ -1,6 +1,6 @@
 import { markUpResourceToStudy } from './markUpResourceToStudy'
-import { getOneAnswer } from './getOneAnswer'
-import { activateOrderListFunctionality } from './activateOrderListFunctionality'
+import { getOneAnswer } from '../active-resource/getOneAnswer'
+import { activateOrderListFunctionality } from '../active-resource/activateOrderListFunctionality'
 import { addBackToTopButton } from './addBackToTopButton'
 
 export function formatClassToStudy(EClass) {

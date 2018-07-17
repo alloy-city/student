@@ -1,7 +1,6 @@
 import { post } from '../http'
-import { buildOpenQuestionResource, buildChoiceResource, buildGapsResource, buildOrderResource } from '../active-resource'
+import { activateOrderListFunctionality, buildOpenQuestionResource, buildChoiceResource, buildGapsResource, buildOrderResource } from '../active-resource'
 import { scrollToElement } from './scroll-to-element'
-import { activateOrderListFunctionality } from '../content'
 import { markUpImage, markUpText, markUpVideo, markUpAudio } from '../content/markup-resources'
 import {
     audios,

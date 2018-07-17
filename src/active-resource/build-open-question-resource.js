@@ -1,4 +1,8 @@
 function buildOpenQuestionResource(resource) {
+    /// #if DEBUG
+    // console.log(resource)
+    /// #endif
+
     var markUp = `
         <div class="panel panel-danger">
             <div class="panel-heading">${resource.question}</div>
