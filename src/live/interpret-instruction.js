@@ -3,6 +3,7 @@ import { retractResource } from './retract-resource'
 import { controlAudio, audios } from '../content/audio'
 import { controlVideo } from '../content/video'
 import { setTab } from '../active-tab'
+import { pointer } from './pointer'
 
 function interpretInstruction(instruction) {
     /// #if DEBUG
@@ -25,6 +26,12 @@ function interpretInstruction(instruction) {
         controlAudio(instruction)
     } else if (instruction.type == "update-xp") {
         updateXp()
+    } else if (instruction.type == "pointer-enter") {
+        pointer(instruction)
+    } else if (instruction.type == "pointer-coordinates") {
+        pointer(instruction)
+    } else if (instruction.type == "pointer-exit") {
+        pointer(instruction)
     }
 
     let ack = instruction
