@@ -4,6 +4,8 @@ if (Auth.userData.messages && Auth.userData.messages.length > 0){
     for (let message of Auth.userData.messages){
         if (message.type == "product_suggestion"){
             show(`${string.messages.suggestion[0]} <a onclick="Student.Product.view('${message.message}')" role="button">${string.messages.suggestion[1]}</a>`, message._id)
+        } else if (message.type == "mission_assessed"){
+            show(`${message.message}`, message._id)
         }
     }
 }
