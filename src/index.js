@@ -11,6 +11,7 @@ import * as Evidence from './evidence'
 import * as Logout from "./logout.js"
 import * as Live from "./live"
 import * as ActiveResource from './active-resource'
+import { viewMission } from './viewMission'
 
 text.applyText()
 
@@ -39,5 +40,6 @@ window.Student = {
     Live,
     ActiveResource,
     Content,
-    UserDisplay
+    UserDisplay,
+    viewMission
 }
