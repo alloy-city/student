@@ -1,6 +1,6 @@
 {
-  "name": "alloy-bundle",
-  "version": "0.10.0",
+  "name": "student-bundle",
+  "version": "0.10.1",
   "description": "Provides Student access level functionality to Alloy City clients.",
   "main": "src/index.js",
   "scripts": {
