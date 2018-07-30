@@ -6,7 +6,7 @@ import { orderByTitle } from './orderByTitle'
 
 export default (product) => {
     /// #if DEBUG
-    console.log(product)
+    // console.log(product)
     /// #endif
 
     let levelBlock = `<div class="btn-group btn-group-justified" role="group" aria-label="levels">`
@@ -123,7 +123,9 @@ export default (product) => {
 
     } else if (product.lessons) {
         orderByTitle(product.lessons)
-        console.log(product.lessons)
+        /// #if DEBUG
+        // console.log(product.lessons)
+        /// #endif
         let lessonsMarkup = `<ul class="list-group">`
         for (let lesson of product.lessons){
             lessonsMarkup += `<li class="list-group-item"><span class="text-success">${lesson.title}</span> <small>${lesson.subtitle}</small>${lesson.description ? `<p>${lesson.description}</p>` : ""}</li>`

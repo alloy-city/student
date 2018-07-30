@@ -13,7 +13,7 @@ export function getOneAnswer(question_id) {
     post(body, "answer/get-answer", res => {
         if (res) {
             /// #if DEBUG
-            console.log(res);
+            // console.log(res);
             /// #endif
 
             $(`#${question_id}`).val(res.answer).text(res.answer)

@@ -1,7 +1,9 @@
 import format from './format-card'
 
 export default (product) => {
-    console.log(product)
+    /// #if DEBUG
+    // console.log(product)
+    /// #endif
 
     let teachers = []
     let totalMinutes = 0
