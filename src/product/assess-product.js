@@ -1,7 +1,7 @@
 import format from './format-card'
 
 export default (product) => {
-    // console.log(product)
+    console.log(product)
 
     let teachers = []
     let totalMinutes = 0
@@ -23,7 +23,7 @@ export default (product) => {
     } else {
 
         isPack = true
-        if (product.courses && product.courses[0].hangouts.length >= 2){
+        if (product.courses && product.courses[0] && product.courses[0].hangouts.length >= 2){
             firstTwoHangouts = [product.courses[0].hangouts[0], product.courses[0].hangouts[1]]
         }
 

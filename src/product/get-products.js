@@ -3,6 +3,7 @@ import { get } from '../http'
 const getCourses = new Promise((resolve, reject) => {
 
     get("course/enlistable", courses => {
+        console.log(courses)
         resolve(courses)
     })
 
@@ -11,6 +12,7 @@ const getCourses = new Promise((resolve, reject) => {
 const getPacks = new Promise((resolve, reject) => {
 
     get("pack/latest/10", packs => {
+        console.log(packs)
         resolve(packs)
     })
 

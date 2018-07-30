@@ -30,6 +30,7 @@ export default (products) => {
         let cardsCounter = i
         // console.log("c:", c)
         for (let ii = 0; ii < c; ii++) {
+            // console.log(ii)
             // console.log(cardsCounter, products.length)
 
             if (cardsCounter < products.length) {
@@ -46,6 +47,8 @@ export default (products) => {
 
         cardsMarkup += "</div>"
     }
+
+    // console.log(cardsMarkup)
 
     cardsMarkup += "</div>"
     coursesContainer.appendChild(htmlToElement(cardsMarkup))
