@@ -1,4 +1,7 @@
 export function applyText() {
+    // logo
+    $("#logo").attr("src", `/images/logo_${Auth.userData.uiLanguage}.png`);
+
     // payment
     $("#payment_methods").text(string.payment.methods);
 
