@@ -39,7 +39,7 @@ function openChapter(themeIndex, _id, ownsAll) {
                         markup += `
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" onclick="Student.Content.selectEclassToStudy('${lesson._id}')" role="button">
                                 <div class="thumbnail lesson-card">
-                                    <img src="/images/lesson-icons/${lesson.icon ? lesson.icon : "lesson-no-icon.png"}" alt="">
+                                    <img src="/images/lesson-icons/${lesson.icon ? lesson.icon : "lesson-no-icon_v2.png"}" alt="">
                                     <h4>${lesson.title}</h4>
                                     <p>${lesson.subtitle}</p>
                                     <button class="btn btn-primary btn-sm" type="button">${string.commons.open}</button>

@@ -5,8 +5,8 @@ let themeIcons = [
     "business",
     "literature",
     "no-theme-icon", // "history", empty
-    "no-theme-icon", // "specialist", empty
     "tests",
+    "no-theme-icon", // "environnement", empty
     "no-theme-icon", // "science", empty
     "no-theme-icon", // "scholar", empty
     "no-theme-icon", // "geek", empty
