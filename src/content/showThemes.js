@@ -11,10 +11,7 @@ export function showThemes() {
             themesMarkup += `
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" role="button" onclick="Student.Content.showChapters(${i})">
                 <div class="thumbnail theme-thumbnail">
-                  <img class="theme-thumbnail-img" src="/images/theme-icons/${themeIcons[i]}.png" alt="${string.material.themes[i].title}">
-                </div>
-                <div>
-                  <h4 class="theme-thumbnail-title text-center">${string.material.themes[i].title}</h4>
+                  <img class="theme-thumbnail-img" src="/images/theme-icons/${themeIcons[i]}_${Auth.userData.uiLanguage}.png" alt="${string.material.themes[i].title}">
                 </div>
               </div>`
         }
