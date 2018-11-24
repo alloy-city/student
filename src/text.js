@@ -58,4 +58,8 @@ export function applyText() {
 
     // products
     document.getElementById("courses-title").innerText = string.products.buyCall
+
+    // current year in footer
+    var d = new Date();
+    document.getElementById("current-year").innerText = d.getFullYear()
 }
