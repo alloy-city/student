@@ -44,6 +44,8 @@ export function applyText() {
     // $("#faq-terms").text(string.agreements.question);
     // terms.setTerms();
 
+    document.getElementById("whatIsIt").innerText = string.faq.whatIsIt
+    document.getElementById("whatIsIt_p").innerHTML = string.faq.whatIsIt_p
     $("#faq-time").text(string.faq.time);
     $("#faq-time_p").text(string.faq.time_p);
     $("#faq-hangouts").text(string.faq.hangouts);
