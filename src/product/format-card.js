@@ -1,4 +1,4 @@
-import { themeIcons } from '../theme-icons'
+import { themeSmallIcons } from '../theme-icons'
 
 export default (title, isPack, description, level, theme, firstTwoHangouts, teachers, totalMinutes, price, _id) => {
 
@@ -56,7 +56,7 @@ export default (title, isPack, description, level, theme, firstTwoHangouts, teac
 
                 <div>
                     <div>
-                        <img src="/images/theme-icons/${themeIcons[theme]}.png" alt="${themeIcons[theme]}">
+                        <img src="/images/theme-icons/${themeSmallIcons[theme]}.png" alt="${themeSmallIcons[theme]}">
                     </div>
                     <div class="product-description">
                         ${description}

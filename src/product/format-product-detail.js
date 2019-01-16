@@ -1,4 +1,4 @@
-import { themeIcons } from '../theme-icons'
+import { themeSmallIcons } from '../theme-icons'
 import buildChaptersTree from './build-chapters-tree'
 import calendar from './calendar'
 import agreements from './agreements'
@@ -6,7 +6,7 @@ import { orderByTitle } from './orderByTitle'
 
 export default (product) => {
     /// #if DEBUG
-    // console.log(product)
+    console.log(product)
     /// #endif
 
     let levelBlock = `<div class="btn-group btn-group-justified" role="group" aria-label="levels">`
@@ -67,7 +67,7 @@ export default (product) => {
                         <div>
                             ${ product.theme ?
                                 `<h2>${string.productDetail.aboutTheTheme}</h2>
-                                <img src="/images/theme-icons/${themeIcons[product.theme]}.png" alt="${themeIcons[product.theme]}">
+                                <img src="/images/theme-icons/${themeSmallIcons[product.theme]}.png" alt="${themeSmallIcons[product.theme]}">
                                 <h3>${string.material.themes[product.theme].title}</h3>
                                 <p>${string.material.themes[product.theme].description}</p>`
                             : "" }
