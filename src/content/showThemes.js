@@ -1,4 +1,5 @@
 import { themeIcons } from '../theme-icons'
+import { history } from './history'
 
 export function showThemes() {
     $("#classroom-content-navigation-title").html(string.material.themesTitle)
@@ -19,5 +20,7 @@ export function showThemes() {
 
     themesMarkup += `</div>`
 
-    $('#classroom-content-navigation-display').html(themesMarkup);
+    $('#classroom-content-navigation-display').html(themesMarkup)
+
+    history()
 }

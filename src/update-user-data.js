@@ -1,6 +1,4 @@
 export function save() {
-    console.log("Update user!")
-
     Auth.userData.name = $("#settings-name").val()
     Auth.userData.nickname = $("#settings-nickname").val()
     Auth.userData.mailingList = document.getElementById('settings-mailing-list').checked
@@ -43,7 +41,6 @@ export function save() {
                 // TODO
                 // replace it with something that doesn't make another request
                 Auth.requestLoggedExperience()
-
             })
         } else {
             response.json().then(err => {
@@ -52,6 +49,4 @@ export function save() {
             })
         }
     })
-
-
 }
