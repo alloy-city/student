@@ -7,6 +7,7 @@ function showChapters(themeId) {
     console.log(Auth.chapters[themeId])
     /// #endif
 
+    document.getElementById("material-display-history").innerHTML = ""
     Student.Content.setTheme(themeId)
 
     $("#classroom-content-navigation-title").html(string.material.themes[themeId].title)

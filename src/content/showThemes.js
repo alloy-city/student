@@ -2,6 +2,7 @@ import { themeIcons } from '../theme-icons'
 import { history } from './history'
 
 export function showThemes() {
+    document.getElementById("material-display-history").innerHTML = ""
     $("#classroom-content-navigation-title").html(string.material.themesTitle)
     $("#classroom-content-navigation-description").html(string.material.themesDescription)
 
