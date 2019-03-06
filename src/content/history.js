@@ -32,7 +32,8 @@ function history() {
                 type.innerText = event.resource.type
                 desc.innerHTML = event.resource.resource.question
                 xps.innerText = `${event.value}/${event.resource.worth}`
-                time.innerText = event.timestamp
+                time.innerText = moment(event.timestamp).fromNow()
+                time.title = event.timestamp;
     
                 line.appendChild(type)
                 line.appendChild(desc)
