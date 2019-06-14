@@ -13,7 +13,7 @@ const getCourses = new Promise((resolve, reject) => {
 
 const getPacks = new Promise((resolve, reject) => {
 
-    get("pack/latest/10", packs => {
+    get("pack/latest/13", packs => {
         /// #if DEBUG
         // console.log(packs)
         /// #endif
