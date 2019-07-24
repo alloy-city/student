@@ -9,6 +9,7 @@ import { markUpResourceToStudy } from './markUpResourceToStudy'
 import { showThemes } from './showThemes'
 import { showChapters } from './showChapters'
 import { openChapter } from './openChapter'
+import { faq } from './faqs'
 
 let theme
 
@@ -20,6 +21,8 @@ let selectedEclass = {
 function setTheme(t){
     theme = t
 }
+
+faq();
 
 export {
     theme,

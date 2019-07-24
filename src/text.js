@@ -36,31 +36,7 @@ export function applyText() {
     $("#directions-descriptions").text(string.directions.descriptions);
     $("#directions-button").text(string.directions.buttonText);
 
-    $("#faq-howMuch").text(string.faq.howMuch);
-    $("#faq-howMuch_p").text(string.faq.howMuch_p);
-    $("#faq-contrat").text(string.faq.contrat);
-    $("#faq-contrat_p").text(string.faq.contrat_p);
-
-    // $("#faq-terms").text(string.agreements.question);
-    // terms.setTerms();
-
-    document.getElementById("whatIsIt").innerText = string.faq.whatIsIt
-    document.getElementById("whatIsIt_p").innerHTML = string.faq.whatIsIt_p
-    document.getElementById("QAMethods").innerText = string.faq.QAMethods
-    document.getElementById("QAMethods_p").innerHTML = string.faq.QAMethods_p
-    document.getElementById("QAClasses").innerText = string.faq.QAClasses
-    document.getElementById("QAClasses_p").innerHTML = string.faq.QAClasses_p
-    $("#faq-time").text(string.faq.time);
-    $("#faq-time_p").text(string.faq.time_p);
-    $("#faq-hangouts").text(string.faq.hangouts);
-    $("#faq-hangouts_p").text(string.faq.hangouts_p);
-    $("#faq-material").text(string.faq.material);
-    $("#faq-material_p").text(string.faq.material_p);
-    $("#faq-missions").text(string.faq.missions);
-    $("#faq-missions_p").text(string.faq.missions_p);
-    $("#faq-xps").text(string.faq.xps);
-    $("#faq-xps_p").text(string.faq.xps_p);
-    $("#faq-indexText2").text(string.faq.indexText2);
+    // $("#faq-indexText2").text(string.faq.indexText2);
 
     // products
     document.getElementById("courses-title").innerText = string.products.buyCall

@@ -1,3 +1,4 @@
+/*
 function getUserText(missionId){
   // console.log(Auth.userData.id);
   // console.log(missionId);
@@ -58,3 +59,4 @@ function sendMissionText(){
     $(".student-text-production").next().addClass("hidden");
   }
 }
+*/

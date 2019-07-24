@@ -1,5 +1,4 @@
 // perform HTTP requests.
-
 function http(method, body, route, callback) {
     /// #if DEBUG
     // console.log(`${apiDomain}/api/${route}`, body)
@@ -37,7 +36,7 @@ function http(method, body, route, callback) {
             })
         }
     }).catch(reason => {
-        // console.log(reason)
+        console.log(reason)
     })
 }
 
