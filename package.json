@@ -1,6 +1,6 @@
 {
   "name": "student-bundle",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Provides Student access level functionality to Alloy City clients.",
   "repository": {
     "type": "git",
@@ -16,8 +16,8 @@
   "license": "GPL-3.0-only",
   "dependencies": {},
   "devDependencies": {
-    "ifdef-loader": "2.1.1",
-    "webpack": "4.37.0",
+    "ifdef-loader": "2.1.2",
+    "webpack": "4.39.0",
     "webpack-cli": "3.3.6"
   }
 }

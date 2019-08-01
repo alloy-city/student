@@ -12,20 +12,17 @@ import * as Logout from "./logout.js"
 import * as Live from "./live"
 import * as ActiveResource from './active-resource'
 import { viewMission } from './viewMission'
+import { fetchMeetings } from './meetings'
 
 text.applyText()
-
 UserDisplay.userDisplay()
 AlloyVids.setPlaylist()
-// whatsAppGroups()
 Product.getRecent()
-// getMissions()
 Settings.settingsText()
-// Content.classroomGetLatestEclasses()
 Content.showThemes()
-// Live.SocketEClassConnect()
 Grenadine.setGrenadineLinks()
 ActiveTab.activeTab()
+fetchMeetings();
 
 window.ActiveTab = ActiveTab
 window.Enlist = Enlist
