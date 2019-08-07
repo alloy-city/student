@@ -6,7 +6,7 @@ import { orderByTitle } from './orderByTitle'
 
 export default (product) => {
     /// #if DEBUG
-    console.log(product)
+    // console.log(product)
     /// #endif
 
     let levelBlock = `<div class="btn-group btn-group-justified" role="group" aria-label="levels">`

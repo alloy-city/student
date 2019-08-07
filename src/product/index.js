@@ -8,14 +8,13 @@ import addToShoppingCart from './add-to-shopping-cart'
 function userIsInGroup(usersInGroup, user) {
     for (var i = 0; i < usersInGroup.length; i++) {
         if (userInGroup[i] == user) {
-            return true
-            break
+            return true;
         }
     }
-    return false
+    return false;
 }
 
-let products = []
+let products = [];
 function getRecent() {
     getPacks.then((packs) => {
         products = packs;
