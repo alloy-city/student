@@ -3,6 +3,7 @@ import buildChaptersTree from './build-chapters-tree'
 import calendar from './calendar'
 import agreements from './agreements'
 import { orderByTitle } from './orderByTitle'
+import { setCourses } from './index';
 
 export default (product) => {
     /// #if DEBUG
@@ -107,20 +108,19 @@ export default (product) => {
 
     let hangouts = []
     if (product.courses){
+        setCourses(product.courses);
         for (let i=0; i < product.courses.length; i++){
             for (let ii=0; ii<product.courses[i].hangouts.length; ii++){
-                hangouts.push(product.courses[i].hangouts[ii])
+                hangouts.push(product.courses[i].hangouts[ii]);
             }
         }
-        calendar(hangouts)
-
+        calendar(hangouts);
     } else if (product.hangouts) {
+        setCourses([product]);
         for (let i = 0; i < product.hangouts.length; i++) {
-            hangouts.push(product.hangouts[i])
+            hangouts.push(product.hangouts[i]);
         }
-        calendar(hangouts)
-        
-
+        calendar(hangouts);
     } else if (product.lessons) {
         orderByTitle(product.lessons)
         /// #if DEBUG

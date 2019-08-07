@@ -1,4 +1,5 @@
-import { post } from '../http'
+import { get, post } from '../http';
+import { getCourses } from './index';
 
 export default (_id, price, title) => {
     if (Auth.userData.messages && Auth.userData.messages.length > 0){
@@ -28,7 +29,13 @@ export default (_id, price, title) => {
     let agreements = document.getElementById("agreements-accepted")
 
     if (agreements.checked){
-        Payment.cart.add(_id, price, title)
+        Payment.cart.add(_id, price, title);
+        let courses = getCourses();
+        if (courses.length) {
+            for (let i=0; i<courses.length; i++) {
+                get(`cslc/sign/${courses[i]._id}`, res => {console.log(res)});
+            }
+        }
     } else {
         alert(string.productDetail.termsNotAccespted)
     }

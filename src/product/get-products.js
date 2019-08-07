@@ -1,6 +1,6 @@
 import { get } from '../http'
 
-const getCourses = new Promise((resolve, reject) => {
+const fetchCourses = new Promise((resolve, reject) => {
 
     get("course/enlistable", courses => {
         /// #if DEBUG
@@ -22,4 +22,4 @@ const getPacks = new Promise((resolve, reject) => {
 
 })
 
-export { getCourses, getPacks }
+export { fetchCourses, getPacks }

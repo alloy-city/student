@@ -1,9 +1,21 @@
-import { getPacks, getCourses } from './get-products'
+import { getPacks, fetchCourses } from './get-products'
 import addProductsToDOM from './add-products-to-DOM'
 import { view } from './view'
 import close from './close.js'
 import { createCalendar } from './calendar/create-calendar'
 import addToShoppingCart from './add-to-shopping-cart'
+
+let courses;
+
+function setCourses(c) {
+    console.log(c);
+
+    courses = c;
+}
+
+function getCourses() {
+    return courses;
+}
 
 function userIsInGroup(usersInGroup, user) {
     for (var i = 0; i < usersInGroup.length; i++) {
@@ -18,7 +30,7 @@ let products = [];
 function getRecent() {
     getPacks.then((packs) => {
         products = packs;
-        getCourses.then((courses) => {
+        fetchCourses.then((courses) => {
             if (courses != 1){ // If server returns 1, no courses are available. Proceed with packs only.
                 for (let i = 0; i < courses.length; i++){
                     products.push(courses[i])
@@ -44,5 +56,7 @@ export {
     view,
     close,
     createCalendar,
-    addToShoppingCart
+    addToShoppingCart,
+    setCourses,
+    getCourses
 }
