@@ -11,7 +11,7 @@ export default (_id, price, title) => {
                         timestamp: new Date()
                     }, "message/consume", res => {
                         /// #if DEBUG
-                        console.log(res)
+                        // console.log(res)
                         /// #endif
 
                         if (res.message == "Message acknowledged."){
