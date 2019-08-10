@@ -31,7 +31,7 @@ export default (_id, price, title) => {
     if (agreements.checked){
         Payment.cart.add(_id, price, title);
         let courses = getCourses();
-        if (courses.length) {
+        if (courses && courses.length) {
             for (let i=0; i<courses.length; i++) {
                 get(`cslc/sign/${courses[i]._id}`, res => {console.log(res)});
             }
