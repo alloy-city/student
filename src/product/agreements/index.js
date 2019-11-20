@@ -18,7 +18,7 @@ export default (element) => {
     for (let i = 0; i<string.agreements.sections.length; i++) {
         agreements += `<p class="text-muted">${string.agreements.section} ${i+1}</p>`
 
-        if (i == 1){
+        if (i == 2){
             if (Auth.userData.name){
                 agreements += `<h4>${string.agreements.sections[i].title[0]}, <b>${Auth.userData.name}</b>, ${string.agreements.sections[i].title[2]}</h4>`
             } else {
