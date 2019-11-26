@@ -13,6 +13,7 @@ import * as Live from "./live"
 import * as ActiveResource from './active-resource'
 import { viewMission } from './viewMission'
 import { fetchMeetings } from './meetings'
+import formatProductDetail from "./product/format-product-detail.js"
 
 text.applyText()
 UserDisplay.userDisplay()
@@ -23,6 +24,8 @@ Content.showThemes()
 Grenadine.setGrenadineLinks()
 ActiveTab.activeTab()
 fetchMeetings();
+
+if (localStorage.showPack && localStorage.showPack.length > 0) Product.view(localStorage.showPack);
 
 window.ActiveTab = ActiveTab
 window.Enlist = Enlist
