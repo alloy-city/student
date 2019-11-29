@@ -53,6 +53,13 @@ export default (product) => {
         hTitle = ""
     }
 
+    let priceString;
+    if (product.price >= Auth.minimumInstalmentPrice) {
+        priceString = `${Auth.maxInstalments}x ${numberToBRL(product.price/Auth.maxInstalments)} <small><i>${string.commons.or} ${numberToBRL(product.price*Auth.fullPaymentFraction)}</i></small>`
+    } else {
+        priceString = numberToBRL(product.price);
+    }
+
     let markup = `
         <div id="product-detail" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -87,7 +94,7 @@ export default (product) => {
                         <div id="hangouts-list"></div>
                         <div id="agreements"></div>
                         <div class="product-detail-buy-container">
-                            <h3>${numberToBRL(product.price)}</h3>
+                            <h3>${priceString}</h3>
                             <a class="btn btn-primary" role="button" onclick="Student.Product.addToShoppingCart('${product._id}', ${product.price}, '${product.title}')">${string.productDetail.addToShoppingCart}</a>
                         </div>
                     </div>

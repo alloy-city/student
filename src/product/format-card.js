@@ -2,7 +2,7 @@ import { themeSmallIcons } from '../theme-icons'
 
 export default (title, isPack, description, level, theme, firstTwoHangouts, teachers, totalMinutes, price, _id) => {
 
-    let teachersElement, startDate, twoFirstDays, day, hour
+    let teachersElement, startDate, twoFirstDays, day, hour, priceString
 
     let typeIcons = `<span class="text-muted glyphicon glyphicon-facetime-video" aria-hidden="true"></span>`
     if (isPack) {
@@ -38,6 +38,12 @@ export default (title, isPack, description, level, theme, firstTwoHangouts, teac
         hour = moment(firstTwoHangouts[0]).format('HH:mm');
     }
 
+    if (price >= Auth.minimumInstalmentPrice) {
+        priceString = `${Auth.maxInstalments}x ${numberToBRL(price/Auth.maxInstalments)}`
+    } else {
+        priceString = numberToBRL(price);
+    }
+
     let card = `
         <div class="thumbnail product-card">
             <div class="caption">
@@ -69,7 +75,7 @@ export default (title, isPack, description, level, theme, firstTwoHangouts, teac
                 </div>
 
                 <div>
-                    <h3 class="text-primary pull-left">${numberToBRL(price)}</h3>
+                    <h3 class="text-primary pull-left">${priceString}</h3>
                     <a class="btn btn-primary pull-right" role="button" onclick="Student.Product.view('${_id}')">${string.commons.open}</a>
                     </br>
                 </div>
