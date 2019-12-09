@@ -21,6 +21,7 @@ AlloyVids.setPlaylist()
 Product.getRecent()
 Settings.settingsText()
 Content.showThemes()
+Content.search.setSearchListener();
 Grenadine.setGrenadineLinks()
 ActiveTab.activeTab()
 fetchMeetings();

@@ -21,7 +21,7 @@ export function setPlaylist() {
         success: function (data, status, error) {
             if (error) // console.log(error)
             if (status) // console.log(status)
-            if (data){
+            if (data && data.items){
                 // console.log('success', data);
                 for (var i = 0; i < data.items.length; i++) {
                     $("#vidsMenu").append("<div onclick='AlloyVids.setVideo(this.id)' id='" + data.items[i].snippet.resourceId.videoId + "' ><div class='cropImgVidsMenu'><img src='" + data.items[i].snippet.thumbnails.default.url + "'></div><p>" + data.items[i].snippet.title.slice(18) + "</p></div>");

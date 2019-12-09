@@ -10,6 +10,7 @@ import { showThemes } from './showThemes'
 import { showChapters } from './showChapters'
 import { openChapter } from './openChapter'
 import { faq } from './faqs'
+import * as search from './search'
 
 let theme
 
@@ -38,5 +39,6 @@ export {
     markUpResourceToStudy,
     showThemes,
     showChapters,
-    openChapter
+    openChapter,
+    search
 }
