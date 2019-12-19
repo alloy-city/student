@@ -12,12 +12,12 @@
     "build:dev": "npx webpack --config webpack.dev.config.js",
     "build:prod": "npx webpack --config webpack.prod.config.js"
   },
-  "author": "",
+  "author": "Pedro SOUSA",
   "license": "GPL-3.0-only",
   "dependencies": {},
   "devDependencies": {
     "ifdef-loader": "2.1.4",
-    "webpack": "4.41.2",
+    "webpack": "4.41.4",
     "webpack-cli": "3.3.10"
   }
 }
