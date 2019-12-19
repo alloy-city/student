@@ -2,13 +2,12 @@ import { post } from '../http'
 import { hasAccess } from "./hasAccess"
 
 function openChapter(themeIndex, _id, ownsAll) {
-
     /// #if DEBUG
     // console.log(themeIndex)
     // console.log(_id)
     // console.log(Auth.chapters)
     /// #endif
-    
+
     for (let chapter of Auth.chapters[themeIndex]){
         if (chapter._id == _id){
 
