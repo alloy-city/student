@@ -4,7 +4,7 @@ import { prepareChapterDescription } from './prepareChapterDescription'
 function showChapters(themeId) {
     /// #if DEBUG
     // console.log(themeId)
-    console.log(Auth.chapters[themeId])
+    // console.log(Auth.chapters[themeId])
     /// #endif
 
     document.getElementById("material-display-history").innerHTML = ""

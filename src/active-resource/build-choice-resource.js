@@ -1,6 +1,6 @@
 function buildChoiceResource(resource, id) {
     /// #if DEBUG
-    console.log(resource, id);
+    // console.log(resource, id);
     /// #endif
 
     Student.ActiveResource.resourcesActiveCorrect[id] = resource.items[0];

@@ -2,6 +2,9 @@ import { markUpResourceToStudy } from './markUpResourceToStudy'
 import { getOneAnswer } from '../active-resource/getOneAnswer'
 import { activateOrderListFunctionality } from '../active-resource/activateOrderListFunctionality'
 import { addBackToTopButton } from './addBackToTopButton'
+import { addNextLessonButton } from './addNextLessonButton'
+import { addPrevLessonButton } from './addPrevLessonButton'
+import { addChapterNavigationBar } from './addChapterNavigationBar'
 
 export function formatClassToStudy(EClass) {
     let header = `
@@ -32,5 +35,8 @@ export function formatClassToStudy(EClass) {
         }
     }
 
-    addBackToTopButton()
+    // addBackToTopButton()
+    // addNextLessonButton()
+    // addPrevLessonButton()
+    addChapterNavigationBar()
 }

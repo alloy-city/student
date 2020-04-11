@@ -8,9 +8,22 @@ function openChapter(themeIndex, _id, ownsAll) {
     // console.log(Auth.chapters)
     /// #endif
 
-    for (let chapter of Auth.chapters[themeIndex]){
-        if (chapter._id == _id){
+    Student.chapterNavigation = {
+        index: 0,
+        lessons: null,
+        next: () => {
+            if (Student.chapterNavigation.index == Student.chapterNavigation.lessons.length - 1) return;
+            Student.Content.selectEclassToStudy(++Student.chapterNavigation.index);
+        },
+        prev: () => {
+            if (Student.chapterNavigation.index == 0) return;
+            Student.Content.selectEclassToStudy(--Student.chapterNavigation.index);
+        }
+    }
 
+    for (let [i, chapter] of Auth.chapters[themeIndex].entries()){
+        if (chapter._id == _id){
+            Student.chapterNavigation.lessons = chapter.lessons;
             post({ ids: chapter.lessons }, `eclass/s`, lessons => {
                 let title = document.getElementById("classroom-content-navigation-title")
                 let description = document.getElementById("classroom-content-navigation-description")
@@ -33,10 +46,12 @@ function openChapter(themeIndex, _id, ownsAll) {
                     </button>
                     <div class="row">`
 
-                for (let lesson of lessons){
+                for (let i=0; i<lessons.length; i++){
+                    let lesson = lessons[i];
+
                     if (hasAccess(lesson._id) || ownsAll || lesson.price == 0){
                         markup += `
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" onclick="Student.Content.selectEclassToStudy('${lesson._id}')" role="button">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" onclick="Student.Content.selectEclassToStudy(${i})" role="button">
                                 <div class="thumbnail lesson-card">
                                     <img src="/images/lesson-icons/${lesson.icon ? lesson.icon : "lesson-no-icon_v2.png"}" alt="">
                                     <h4>${lesson.title}</h4>
