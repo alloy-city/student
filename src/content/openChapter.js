@@ -10,7 +10,7 @@ function openChapter(themeIndex, _id, ownsAll) {
 
     Student.chapterNavigation = {
         index: 0,
-        lessons: null,
+        lessons: [],
         next: () => {
             if (Student.chapterNavigation.index == Student.chapterNavigation.lessons.length - 1) return;
             Student.Content.selectEclassToStudy(++Student.chapterNavigation.index);
@@ -23,7 +23,6 @@ function openChapter(themeIndex, _id, ownsAll) {
 
     for (let [i, chapter] of Auth.chapters[themeIndex].entries()){
         if (chapter._id == _id){
-            Student.chapterNavigation.lessons = chapter.lessons;
             post({ ids: chapter.lessons }, `eclass/s`, lessons => {
                 let title = document.getElementById("classroom-content-navigation-title")
                 let description = document.getElementById("classroom-content-navigation-description")
@@ -36,6 +35,10 @@ function openChapter(themeIndex, _id, ownsAll) {
                 /// #if DEBUG
                 // console.log(lessons)
                 /// #endif
+
+                for(let i=0; i<lessons.length; i++) {
+                    Student.chapterNavigation.lessons[i] = lessons[i]._id;
+                }
 
                 // clear content container
                 container.innerHTML = ""
