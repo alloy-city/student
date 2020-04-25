@@ -1,9 +1,10 @@
-import { getPacks, fetchCourses } from './get-products'
-import addProductsToDOM from './add-products-to-DOM'
-import { view } from './view'
-import close from './close.js'
-import { createCalendar } from './calendar/create-calendar'
-import addToShoppingCart from './add-to-shopping-cart'
+import { getPacks, fetchCourses } from './get-products';
+import addProductsToDOM from './add-products-to-DOM';
+import { view } from './view';
+import close from './close.js';
+import { createCalendar } from './calendar/create-calendar';
+import addToShoppingCart from './add-to-shopping-cart';
+import { areThereNewProducts, storeProductDates } from './novelty-checker';
 
 let courses;
 
@@ -39,14 +40,14 @@ function getRecent() {
 
             addProductsToDOM(products)
 
-            if (products.length > 0){
+            if (areThereNewProducts(products)){
                 Student.Evidence.show(`${string.products.newCoursesAvailable} <a class="alert-link" role="button" data-dismiss="alert" onclick="Student.ActiveTab.setTab('products')">${string.products.checkItOut}</a>`)
             }
+
+            storeProductDates(products);
         })
     })
 }
-
-let coursesContainer = document.getElementById("courses-content")
 
 window.onresize = addProductsToDOM
 
