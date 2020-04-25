@@ -1,3 +1,4 @@
+import { mountChapterNavigation } from './mountChapterNavigation';
 
 function addChapterNavigationBar() {
     let display = document.getElementById("material-display-eclass")
@@ -10,6 +11,9 @@ function addChapterNavigationBar() {
     prev.classList.add("pull-left")
     prev.setAttribute("role", "button");
     prev.innerHTML = `<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> ${string.commons.prevLesson}`;
+
+    if (!Student.chapterNavigation) mountChapterNavigation();
+
     if (Student.chapterNavigation.index > 0) {
         prev.addEventListener("click", () => {
             Student.chapterNavigation.prev()

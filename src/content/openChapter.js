@@ -1,5 +1,6 @@
-import { post } from '../http'
-import { hasAccess } from "./hasAccess"
+import { post } from '../http';
+import { hasAccess } from "./hasAccess";
+import { mountChapterNavigation } from './mountChapterNavigation';
 
 function openChapter(themeIndex, _id, ownsAll) {
     /// #if DEBUG
@@ -8,18 +9,7 @@ function openChapter(themeIndex, _id, ownsAll) {
     // console.log(Auth.chapters)
     /// #endif
 
-    Student.chapterNavigation = {
-        index: 0,
-        lessons: [],
-        next: () => {
-            if (Student.chapterNavigation.index == Student.chapterNavigation.lessons.length - 1) return;
-            Student.Content.selectEclassToStudy(++Student.chapterNavigation.index);
-        },
-        prev: () => {
-            if (Student.chapterNavigation.index == 0) return;
-            Student.Content.selectEclassToStudy(--Student.chapterNavigation.index);
-        }
-    }
+    mountChapterNavigation();
 
     for (let [i, chapter] of Auth.chapters[themeIndex].entries()){
         if (chapter._id == _id){
