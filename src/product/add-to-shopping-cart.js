@@ -15,7 +15,6 @@ export default (_id, price, title) => {
                         /// #endif
 
                         if (res.message == "Message acknowledged."){
-                            console.log(res.message_id)
                             document.getElementById(res.message_id).remove()
                         }
                     })
@@ -33,7 +32,7 @@ export default (_id, price, title) => {
         let courses = getCourses();
         if (courses.length) {
             for (let i=0; i<courses.length; i++) {
-                get(`cslc/sign/${courses[i]._id}`, res => {console.log(res)});
+                get(`cslc/sign/${courses[i]._id}`, res => {});
             }
         }
     } else {

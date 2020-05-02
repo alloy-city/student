@@ -38,8 +38,6 @@ function controlVideo(data) {
 
     if (players[data.resource]) {
 
-        console.log(players[data.resource], data.playerState)
-
         /* data.playerState
 
             -1 – unstarted

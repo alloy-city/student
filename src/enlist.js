@@ -7,17 +7,13 @@ export function debtPlusOne(){
 }
 
 export function selectGroupeToEnlist(gId){
-	console.log('selectGroupeID called....');
-	console.log(gId);
-  hideAlerts();
+  	hideAlerts();
 
 	if (Auth.userData.groups.indexOf(gId) >= 0 || sessionStorage.justEnlisted == gId){
 		alreadyEnlistedInThisModule();
 	} else if (Auth.userData.groups.indexOf(0) < 0){
-		console.log('userTooBusy');
 		$('.grpContainer').after('<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><p id="userTooBusy"></p>'+string.alerts.userTooBusy+'</div>');
 	} else {
-		console.log('Show agreements term.');
 		$('#terms_t').text(string.terms.terms_t + ' - v1.1 - ' + string.commons.group+gId);
 		$('#terms1_t').html(string.terms.terms1_t);
 
@@ -65,7 +61,6 @@ export function enlistUser(){
 				// 3 -> SUCCESS: user enlisted
 			*/
 
-			console.log(rett);
 			if (Number(rett)==3){
 				// document.getElementById('enlisted_notification').style.display = 'block';
 				$('.grpContainer').after('<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><p id="enlisted_notification"></p>'+string.alerts.enlisted+'</div>');
@@ -90,7 +85,6 @@ export function enlistUser(){
 }
 
 export function alreadyEnlistedInThisModule(){
-	console.log("alreadyEnlistedInThisModule");
 	$('.grpContainer').after('<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+string.alerts.alreadyEnlisted+'</div>');
 }
 

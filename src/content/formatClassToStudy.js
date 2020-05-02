@@ -1,7 +1,8 @@
-import { markUpResourceToStudy } from './markUpResourceToStudy'
-import { getOneAnswer } from '../active-resource/getOneAnswer'
-import { activateOrderListFunctionality } from '../active-resource/activateOrderListFunctionality'
-import { addChapterNavigationBar } from './addChapterNavigationBar'
+import { markUpResourceToStudy } from './markUpResourceToStudy';
+import { getOneAnswer } from '../active-resource/getOneAnswer';
+import { activateOrderListFunctionality } from '../active-resource/activateOrderListFunctionality';
+import { addChapterNavigationBar } from './addChapterNavigationBar';
+import { addLessonProgressBar } from './progressBar';
 
 export function formatClassToStudy(EClass) {
     let header = `
@@ -36,4 +37,5 @@ export function formatClassToStudy(EClass) {
     // addNextLessonButton()
     // addPrevLessonButton()
     addChapterNavigationBar()
+    addLessonProgressBar()
 }

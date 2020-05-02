@@ -76,13 +76,6 @@ export function validatePassword(){
 
   $(".alert").remove()
 
-  console.log(
-    "validatePassword()",
-    $("#settings-new-password").val(),
-    $("#settings-confirm-new-password").val(),
-    $("#settings-current-password").val()
-  )
-
   let informedCurrentPassword = $("#settings-current-password").val()
   let newPassword = $("#settings-new-password").val()
   let newPasswordConfirmation = $("#settings-confirm-new-password").val()
@@ -94,8 +87,6 @@ export function validatePassword(){
       let SHA256 = new Hashes.SHA256
       let currentClientKey = SHA256.hex(informedCurrentPassword)
       let newClientKey = SHA256.hex(newPassword)
-      console.log("all good ==> send currentClientKey to confirm old password along with newClientKey")
-      // console.log(currentClientKey, newClientKey)
 
       savePassword.save(currentClientKey, newClientKey)
 

@@ -9,8 +9,6 @@ import { areThereNewProducts, storeProductDates } from './novelty-checker';
 let courses;
 
 function setCourses(c) {
-    console.log(c);
-
     courses = c;
 }
 

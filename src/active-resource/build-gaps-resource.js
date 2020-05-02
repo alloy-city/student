@@ -1,7 +1,7 @@
 function buildGapsResource(resource, id) {
     Student.ActiveResource.gapsAnswer[id] = []
 
-    let body = `<form class="form-inline"><div class="form-group"><p id="${id}">`
+    let body = `<form class="form-inline"><div class="form-group" id="${id}">`
     for (var i = 0; i < resource.items.length; i++) {
         if (isEven(i)) {
             body += resource.items[i]
@@ -10,7 +10,7 @@ function buildGapsResource(resource, id) {
             body += '<input type="text" class="form-control">'
         }
     }
-    body += '</p></div></form>'
+    body += '</div></form>'
 
     var markUp = `
         <div class="panel panel-success">

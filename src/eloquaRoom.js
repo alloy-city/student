@@ -245,7 +245,7 @@ function loadPresentationSocket(x, room){
 		if (resourcesReceived.indexOf(data.resource) == -1){
 			resourcesReceived.push(data.resource);
 			if(data.type == "image") {
-				console.log(data);
+				// console.log(data);
 				// clearClassRoomEclassDisplay();
 				$('#classroom-display-eclass').append('<div class="resource transparent">'+ markUpImage(data.resource) + '</div>');
 				$('#classroom-display-eclass').children().last().animate({ opacity: 1 }, 'fast', function(){

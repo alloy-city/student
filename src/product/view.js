@@ -4,7 +4,7 @@ import formatProductDetail from './format-product-detail';
 function view (_id) {
     get(`product/${_id}`, res => {
         /// #if DEBUG
-        console.log(res);
+        // console.log(res);
         /// #endif
 
         if (res && res.courses && res.courses.length) {

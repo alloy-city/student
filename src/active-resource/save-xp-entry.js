@@ -1,4 +1,5 @@
-import { post } from '../http'
+import { post } from '../http';
+import { updateLessonProgressBar } from '../content/progressBar';
 
 function saveXpEntry(id) {
     /// #if DEBUG
@@ -27,7 +28,8 @@ function saveXpEntry(id) {
             // console.log('active-resources:23', res.msg);
             /// #endif
             notify(string.activeResources.success, 'info', false);
-            Student.UserDisplay.updateXp(res.value)
+            Student.UserDisplay.updateXp(res.value);
+            updateLessonProgressBar();
         }
     })
 }

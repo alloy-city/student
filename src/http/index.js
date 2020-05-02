@@ -1,7 +1,7 @@
 // perform HTTP requests.
 function http(method, body, route, callback) {
     /// #if DEBUG
-    console.log(`${apiDomain}/api/${route}`, body)
+    // console.log(`${apiDomain}/api/${route}`, body)
     /// #endif
 
     let headers = new Headers({
@@ -36,7 +36,7 @@ function http(method, body, route, callback) {
             })
         }
     }).catch(reason => {
-        console.log(reason)
+        // console.log(reason)
     })
 }
 

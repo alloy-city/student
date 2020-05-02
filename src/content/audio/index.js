@@ -2,7 +2,7 @@ let audios = {}
 
 function createAudioPlayer(audio) {
     /// #if DEBUG
-    console.log(audio)
+    // console.log(audio)
     /// #endif
 
     let oneAudio = document.createElement("AUDIO")
@@ -15,7 +15,7 @@ function createAudioPlayer(audio) {
 
 function controlAudio(a) {
     /// #if DEBUG
-    console.log(a)
+    // console.log(a)
     /// #endif
     
     if (a.resource.playerState == "playing") {
@@ -23,7 +23,7 @@ function controlAudio(a) {
         audios[a.resource.resource].play();
     } else {
         /// #if DEBUG
-        console.log(a.resource.playerState);
+        // console.log(a.resource.playerState);
         /// #endif
         audios[a.resource.resource].pause();
     }
@@ -34,7 +34,7 @@ let audioPlaying
 function runBar(a) {
     audioPlaying = a.target.name;
     /// #if DEBUG
-    console.log(a);
+    // console.log(a);
     /// #endif
 
     // audios[a.target.name].updater = setInterval(updateBar(a.target.name, (a.target.currentTime / a.target.duration)), 250);
@@ -46,7 +46,7 @@ function runBar(a) {
     function updateBar() {
         var progression = Math.floor(audios[audioPlaying].currentTime / audios[audioPlaying].duration * 100);
         /// #if DEBUG
-        console.log(progression + '%');
+        // console.log(progression + '%');
         /// #endif
         
         $('#' + audioPlaying).css('width', (progression + '%')).attr('aria-valuenow', progression);

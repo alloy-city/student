@@ -5,20 +5,15 @@ function checkGapFills(id) {
 
     let correctAnswers
     $.each(arr, (key, value) => {
-        // console.log($(value).val());
         Student.ActiveResource.gapsAnswer[id][key].userAnswer = $(value).val();
-        if (Student.ActiveResource.gapsAnswer[id][key].userAnswer == Student.ActiveResource.gapsAnswer[id][key].answer) {
-            // console.log("Good!");
-            // console.log($(value).next().attr("class"));
+        if (Student.ActiveResource.gapsAnswer[id][key].userAnswer === Student.ActiveResource.gapsAnswer[id][key].answer) {
             if ($(value).next().attr("class") != "input-correct glyphicon glyphicon-ok text-success") $(value).after('<span class="input-correct glyphicon glyphicon-ok text-success" aria-hidden="true" style="top: 5px;right: 27px;"></span>');
         }
     })
 
     let numberOfcorrectAnswers = 0;
     for (var i = 0; i < Student.ActiveResource.gapsAnswer[id].length; i++) {
-        if (Student.ActiveResource.gapsAnswer[id][i].answer != Student.ActiveResource.gapsAnswer[id][i].userAnswer) {
-            console.log("One of the answers is incorect.");
-        } else {
+        if (Student.ActiveResource.gapsAnswer[id][i].answer === Student.ActiveResource.gapsAnswer[id][i].userAnswer) {
             numberOfcorrectAnswers++;
         }
     }

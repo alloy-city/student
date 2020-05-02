@@ -1,6 +1,4 @@
 export function save(currentClientKey, newClientKey){
-    console.log("submitNewKey() has been called.", currentClientKey, newClientKey)
-
     let headers = new Headers({
         "Content-Type": "application/json",
         "Authorization": `Bearer ${localStorage.token}`
@@ -21,7 +19,6 @@ export function save(currentClientKey, newClientKey){
             })
         } else {
             response.json().then(err => {
-                console.log(err)
                 notify(string.auth.wrongPassword, "warning", true)
             })
         }  
