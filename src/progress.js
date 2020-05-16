@@ -72,8 +72,6 @@ function displayUserProgress() {
     get("xp/progression", progress => {
         progress.overLevel = Auth.userData.progressionOverLevel;
 
-        console.log(progress);
-
         levelProgressBar.setAttribute("aria-valuenow", `"${progress.overLevel}"`);
         ownedMaterialProgressBar.setAttribute("aria-valuenow", `"${progress.overOwned}"`);
         materialProgressBar.setAttribute("aria-valuenow", `"${progress.overTotal}"`);
@@ -89,8 +87,6 @@ function displayUserProgress() {
         levelProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.level.text[0]}${Auth.userData.xp}${string.userPanelText.progressBars.level.text[1]}${Auth.userData.still}${string.userPanelText.progressBars.level.text[2]}${string.material.levels[Auth.userData.level + 1]}`);
         ownedMaterialProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.ownedMaterial.text[0]}${Math.round(progress.overOwned*100)}${string.userPanelText.progressBars.ownedMaterial.text[1]}`);
         materialProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.material.text[0]}${(progress.overTotal*100).toFixed(2)}${string.userPanelText.progressBars.material.text[1]}`);
-
-        console.log(string.userPanelText.progressBars);
     })
 }
 
