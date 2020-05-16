@@ -43,13 +43,14 @@ function openChapter(themeIndex, _id, ownsAll) {
                     let lesson = lessons[i];
 
                     if (hasAccess(lesson._id) || ownsAll || lesson.price == 0){
+                        let progress = lesson.progression === -1 ? 100 : lesson.progression*100;
                         markup += `
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" onclick="Student.Content.selectEclassToStudy(${i})" role="button">
                                 <div class="thumbnail lesson-card">
                                     <img src="/images/lesson-icons/${lesson.icon ? lesson.icon : "lesson-no-icon_v2.png"}" alt="">
                                     <div class="progress" style="height:6px;margin-top:5px;">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="${lesson.progression*100}" aria-valuemin="0" aria-valuemax="100" style="width: ${lesson.progression*100}%;">
-                                            <span class="sr-only">${lesson.progression*100}% Complete</span>
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="${progress}" aria-valuemin="0" aria-valuemax="100" style="width: ${progress}%;">
+                                            <span class="sr-only">${progress}% Complete</span>
                                         </div>
                                     </div>
                                     <h4>${lesson.title}</h4>

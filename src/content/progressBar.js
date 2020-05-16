@@ -24,6 +24,7 @@ function addLessonProgressBar() {
 
     get(`eclass/progression/${Student.chapterNavigation.lessons[Student.chapterNavigation.index]}/${Auth.userData._id}`, res => {
         if (res.message) return;
+        if (res.progression === -1) return;
 
         progressBarElement.setAttribute("aria-valuenow", `${res.progression}`);
         progressBarElement.setAttribute("style", `min-width: 2em; width: ${res.progression*100}%;`);
@@ -50,10 +51,12 @@ function updateLessonProgressBar() {
         let container = document.getElementById("lesson-progress-bar-container");
         let progressBar = document.getElementById("lesson-progress-bar");
 
+        let progress = res.progression === -1 ? 100 : res.progression*100;
+
         if (container && progressBar) {
-            text.innerText = `${Math.round(res.progression*100)}%`;
-            container.setAttribute("title", `${string.material.progression[0]}${Math.round(res.progression*100)}%${string.material.progression[1]}`);
-            progressBar.setAttribute("style", `min-width: 2em; width: ${res.progression*100}%;`);
+            text.innerText = `${Math.round(progress)}%`;
+            container.setAttribute("title", `${string.material.progression[0]}${Math.round(progress)}%${string.material.progression[1]}`);
+            progressBar.setAttribute("style", `min-width: 2em; width: ${progress}%;`);
         }
     });
 }
