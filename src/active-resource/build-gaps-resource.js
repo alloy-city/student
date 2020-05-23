@@ -1,13 +1,18 @@
-function buildGapsResource(resource, id) {
-    Student.ActiveResource.gapsAnswer[id] = []
+function buildGapsResource(resource) {
+    Student.ActiveResource.gapsAnswer[resource.resource._id] = []
 
-    let body = `<form class="form-inline"><div class="form-group" id="${id}">`
-    for (var i = 0; i < resource.items.length; i++) {
+    let body = `<form class="form-inline"><div class="form-group" id="${resource.resource._id}">`
+    for (var i = 0; i < resource.resource.items.length; i++) {
         if (isEven(i)) {
-            body += resource.items[i]
+            body += resource.resource.items[i]
         } else {
-            Student.ActiveResource.gapsAnswer[id].push({ answer: resource.items[i], userAnswer: '' })
-            body += '<input type="text" class="form-control">'
+            if (resource.solved) {
+                Student.ActiveResource.gapsAnswer[resource.resource._id].push({ answer: resource.resource.items[i], userAnswer: resource.resource.items[i] })
+                body += `<input type="text" class="form-control" value="${resource.resource.items[i]}">`
+            } else {
+                Student.ActiveResource.gapsAnswer[resource.resource._id].push({ answer: resource.resource.items[i], userAnswer: '' })
+                body += '<input type="text" class="form-control">'
+            }
         }
     }
     body += '</div></form>'
@@ -15,11 +20,11 @@ function buildGapsResource(resource, id) {
     var markUp = `
         <div class="panel panel-success">
             <div class="panel-heading">
-                ${resource.question}
+                ${resource.resource.question}
             </div>
             <div class="panel-body">
                 ${body}
-                <button class="btn btn-default" onclick="Student.ActiveResource.checkGapFills('${id}')">${string.buttons.verify}</button>
+                <button class="btn btn-warning" onclick="Student.ActiveResource.checkGapFills('${resource.resource._id}')">${string.buttons.verify}</button>
             </div>
         </div>`
 

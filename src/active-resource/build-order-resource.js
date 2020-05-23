@@ -1,12 +1,8 @@
 function buildOrderResource(resource) {
     Student.Content.selectedEclass.order.push(resource);
-    // console.log('app/active-resources.js:6', resource);
 
     Student.ActiveResource.resourcesOrder[resource._id] = resource.resource.items.slice();
-    shuffle(resource.resource.items);
-
-    // console.log(11, "correct order:", resourcesOrder);
-    // console.log(11, "shuffled:", resource.resource.items);
+    if (!resource.solved) shuffle(resource.resource.items);
 
     let items = '';
 

@@ -1,24 +1,20 @@
-function buildChoiceResource(resource, id) {
-    /// #if DEBUG
-    // console.log(resource, id);
-    /// #endif
+function buildChoiceResource(resource) {
+    Student.ActiveResource.resourcesActiveCorrect[resource._id] = resource.resource.items[0];
 
-    Student.ActiveResource.resourcesActiveCorrect[id] = resource.items[0];
-
-    shuffle(resource.items);
+    shuffle(resource.resource.items);
 
     let items = '<div class="list-group">'
-    for (let i = 0; i < resource.items.length; i++) {
-        items += '<a class="list-group-item" onclick="Student.ActiveResource.selectActiveResourceItem(this)">' + resource.items[i] + '</a>';
+    for (let i = 0; i < resource.resource.items.length; i++) {
+        items += `<a class="list-group-item ${resource.solved && resource.resource.items[i] == Student.ActiveResource.resourcesActiveCorrect[resource._id] ? "active" : ""}" onclick="Student.ActiveResource.selectActiveResourceItem(this)">` + resource.resource.items[i] + '</a>';
     }
     items += "</div>";
 
     let markUp = `
         <div class="panel panel-warning">
-            <div class="panel-heading">${resource.question}</div>
+            <div class="panel-heading">${resource.resource.question}</div>
             <div class="panel-body">
                 ${items}
-                <a class="btn btn-warning" onclick="Student.ActiveResource.verifyActiveChoice('${id}', this)">${string.buttons.verify}</a>
+                <a class="btn btn-warning" onclick="Student.ActiveResource.verifyActiveChoice('${resource._id}', this)">${string.buttons.verify}</a>
             </div>
         </div>`
 
