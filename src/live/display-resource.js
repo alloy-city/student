@@ -68,12 +68,12 @@ function displayResource(data) {
             })
 
         } if (data.type == "choice") {
-            $('#classroom-display-eclass').append('<div class="resource transparent" name="' + data._id + '">' + buildChoiceResource(data.resource, data._id) + '</div>');
+            $('#classroom-display-eclass').append('<div class="resource transparent" name="' + data._id + '">' + buildChoiceResource(data) + '</div>');
             $('#classroom-display-eclass').children().last().animate({ opacity: 1 }, 'fast', function () {
                 scrollToElement($('[name="' + data._id + '"]'));
             });
         } if (data.type == "gaps") {
-            $('#classroom-display-eclass').append('<div class="resource transparent" name="' + data._id + '">' + buildGapsResource(data.resource, data._id) + '</div>');
+            $('#classroom-display-eclass').append('<div class="resource transparent" name="' + data._id + '">' + buildGapsResource(data) + '</div>');
             $('#classroom-display-eclass').children().last().animate({ opacity: 1 }, 'fast', function () {
                 scrollToElement($('[name="' + data._id + '"]'));
             });
