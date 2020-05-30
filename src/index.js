@@ -1,6 +1,5 @@
 import * as text from "./text.js"
 import * as UserDisplay from "./userDisplay.js"
-import * as AlloyVids from "./alloy-vids.js"
 import * as Product from "./product"
 import * as Enlist from "./enlist.js"
 import * as Settings from "./settings.js"
@@ -13,11 +12,9 @@ import * as Live from "./live"
 import * as ActiveResource from './active-resource'
 import { viewMission } from './viewMission'
 import { fetchMeetings } from './meetings'
-import formatProductDetail from "./product/format-product-detail.js"
 
 text.applyText()
 UserDisplay.userDisplay()
-AlloyVids.setPlaylist()
 Product.getRecent()
 Settings.settingsText()
 Content.showThemes()
@@ -30,7 +27,6 @@ if (localStorage.showPack && localStorage.showPack.length > 0) Product.view(loca
 
 window.ActiveTab = ActiveTab
 window.Enlist = Enlist
-window.AlloyVids = AlloyVids
 window.Settings = Settings
 window.Logout = Logout
 

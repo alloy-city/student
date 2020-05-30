@@ -1,10 +1,8 @@
-// keep active tab on localStorage for next visit
 function activeTab(){
     let tabs = [
         "classroom",
         "material",
         "whatsapp",
-        "vids",
         "training",
         "faq",
         "products",
@@ -16,7 +14,6 @@ function activeTab(){
 }
 
 function setTab(tab){
-    // console.log(tab)
     save(tab)
     let tabElements = document.getElementsByClassName("nav-tabs")[0].children
     let tabPanes = document.getElementsByClassName("tab-pane")
