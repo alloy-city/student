@@ -38,4 +38,11 @@ export function formatClassToStudy(EClass) {
     // addPrevLessonButton()
     addChapterNavigationBar()
     addLessonProgressBar()
+
+    let privateVids = document.getElementsByClassName("private_vid");
+    for (let i=0; i<privateVids.length; i++) {
+        privateVids[i].addEventListener("click", event => {
+            event.preventDefault();
+        });
+    }
 }

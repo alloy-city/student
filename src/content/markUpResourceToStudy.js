@@ -2,7 +2,8 @@ import {
     markUpText,
     markUpImage,
     markUpAudioToStudy,
-    markUpVideoToStudy
+    markUpVideoToStudy,
+    markUpPrivateVidToStudy
 } from './markup-resources'
 
 import { buildOpenQuestionResource, buildChoiceResource, buildOrderResource, buildGapsResource } from '../active-resource'
@@ -19,6 +20,7 @@ export function markUpResourceToStudy(oneResource) {
     else if (oneResource.type == "image") markUp = markUp + markUpImage(oneResource.resource);
     else if (oneResource.type == "audio") markUp = markUp + markUpAudioToStudy(oneResource);
     else if (oneResource.type == "video") markUp = markUp + markUpVideoToStudy(oneResource);
+    else if (oneResource.type == "private_vid") markUp = markUp + markUpPrivateVidToStudy(oneResource);
     else if (oneResource.type == "open") {
         Student.Content.selectedEclass.openQuestions.push(oneResource._id);
         markUp = markUp + buildOpenQuestionResource({ _id: oneResource._id, question: oneResource.resource.question });

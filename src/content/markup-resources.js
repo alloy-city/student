@@ -1,3 +1,5 @@
+import markUpPrivateVidToStudy from "./markUpPrivateVidToStudy";
+
 function markUpText(resource) {
     var markUp = '<p>' + resource + '</p>';
     return markUp;
@@ -43,5 +45,6 @@ export {
     markUpAudio,
     markUpAudioToStudy,
     markUpVideo,
-    markUpVideoToStudy
+    markUpVideoToStudy,
+    markUpPrivateVidToStudy
 }
