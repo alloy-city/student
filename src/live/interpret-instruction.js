@@ -4,6 +4,9 @@ import { controlAudio, audios } from '../content/audio'
 import { controlVideo } from '../content/video'
 import { setTab } from '../active-tab'
 import { pointer } from './pointer'
+import clearBoard from './clearBoard'
+
+let nOfResourcesOnBoard = 0;
 
 function interpretInstruction(instruction) {
     /// #if DEBUG
@@ -13,12 +16,18 @@ function interpretInstruction(instruction) {
         setTab("classroom")
     }
 
+    let emptyBoardMessage = document.getElementById("classroom-empty-board");
+    if (emptyBoardMessage) emptyBoardMessage.remove();
+
     if (instruction.type == "clear board") {
-        $('#classroom-display-eclass').html('')
+        nOfResourcesOnBoard = 0;
+        clearBoard();
         Student.Live.clearResourcesReceived()
     } else if (instruction.type == "resource") {
+        nOfResourcesOnBoard++;
         displayResource(instruction.resource)
     } else if (instruction.type == "retract-resource") {
+        if (--nOfResourcesOnBoard == 0) clearBoard();
         retractResource(instruction.resource._id)
     } else if (instruction.type == "control-video") {
         controlVideo(instruction)

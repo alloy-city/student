@@ -19,7 +19,7 @@ function setTab(tab){
     let tabPanes = document.getElementsByClassName("tab-pane")
     for (let i = 0; i < tabElements.length; i++){
         tabElements[i].classList = ""
-        tabPanes[i].classList = "tab-pane fade"
+        if (tabPanes[i]) tabPanes[i].classList = "tab-pane fade"
     }
     document.getElementById(tab).classList = "tab-pane fade in active"
     let p = document.getElementById(`tab-${tab}`).parentElement
