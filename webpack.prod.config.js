@@ -16,7 +16,7 @@ module.exports = {
     },
     output: {
         filename: 'student-bundle.js',
-        path: path.resolve("../../apps/pantoufle/public/static-files/modules")
+        path: path.resolve("./apps/pantoufle/public/static-files/modules")
     },
     mode: 'production'
 };
