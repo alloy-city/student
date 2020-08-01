@@ -9,9 +9,10 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "npx webpack --config webpack.dev.config.js",
-    "build:prod": "npx webpack --config webpack.prod.config.js",
-    "install": "npm run build:prod"
+    "build:dev": "webpack --config webpack.dev.config.js",
+    "build:prod": "webpack --config webpack.prod.config.js",
+    "install": "npm run build:prod",
+    "prepare": "git pull && npm run build:prod"
   },
   "author": "Pedro SOUSA",
   "license": "GPL-3.0-only",
