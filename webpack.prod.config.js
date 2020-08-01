@@ -16,7 +16,7 @@ module.exports = {
     },
     output: {
         filename: 'student-bundle.js',
-        path: path.resolve("./build/prod")
+        path: path.resolve("../../alloy-server/apps/pantoufle/public/static-files/modules")
     },
     mode: 'production'
 };
