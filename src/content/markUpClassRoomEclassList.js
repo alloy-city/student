@@ -22,7 +22,7 @@ export function markUpClassRoomEclassList(arr) {
 
         if (arr[i].level != 999) {
             levelId = arr[i].level
-            levelName = string.material.levels[levelId]
+            levelName = string.material.levels[levelId].name
         }
         markUp = markUp + `
       <tr class="info pointer" onclick="Content.selectEclassToStudy('${arr[i]._id}')">

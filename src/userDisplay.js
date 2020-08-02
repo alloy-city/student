@@ -79,15 +79,8 @@ function calculateLevel() {
 }
 
 function getLoggedInText() {
-    $('#displayUserLevel').text(string.material.levels[Auth.userData.level]);
-    // $('#displayUserXP').text(string.userPanelText.youHave + Auth.userData.xp + string.userPanelText.xps);
-
-    // Animations.animateElement($('#displayUserXP').parent(), 'rubberBand');
-
-    // if (Auth.userData.level != 8) {
-        // document.getElementById('displayUserNextLevel').innerHTML = string.userPanelText.still + Auth.userData.still + string.userPanelText.toGetTo + string.material.levels[Auth.userData.level + 1];
-    // }
-
+    $('#displayUserLevel').text(string.material.levels[Auth.userData.level].name);
+    
     displayUserProgress();
 }
 

@@ -1,23 +1,23 @@
 {
-  "name": "student-bundle",
-  "version": "1.8.1",
-  "description": "Provides Student access level functionality to Alloy City clients.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alloy-city/student.git"
-  },
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "npx webpack --config webpack.dev.config.js",
-    "build:prod": "npx webpack --config webpack.prod.config.js"
-  },
-  "author": "Pedro SOUSA",
-  "license": "GPL-3.0-only",
-  "dependencies": {},
-  "devDependencies": {
-    "ifdef-loader": "2.1.5",
-    "webpack": "4.44.1",
-    "webpack-cli": "3.3.12"
-  }
+    "name": "student-bundle",
+    "version": "1.9.0",
+    "description": "Provides Student access level functionality to Alloy City clients.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alloy-city/student.git"
+    },
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:dev": "npx webpack --config webpack.dev.config.js",
+        "build:prod": "npx webpack --config webpack.prod.config.js"
+    },
+    "author": "Pedro SOUSA",
+    "license": "GPL-3.0-only",
+    "dependencies": {},
+    "devDependencies": {
+        "ifdef-loader": "2.1.5",
+        "webpack": "4.44.1",
+        "webpack-cli": "3.3.12"
+    }
 }

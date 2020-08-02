@@ -16,7 +16,7 @@ export default (product) => {
         if (i == product.level) type = "info"
         levelBlock += `
             <div class="btn-group" role="group">
-                <a type="button" class="btn btn-${type} btn-xs disabled" role="button">${string.material.levels[i]}</a>
+                <a type="button" class="btn btn-${type} btn-xs disabled" role="button">${string.material.levels[i].name}</a>
             </div>`
     }
     levelBlock += "</div>"

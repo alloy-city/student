@@ -84,7 +84,7 @@ function displayUserProgress() {
         ownedMaterialText.innerText = `${Math.round(progress.overOwned*100)}${string.userPanelText.progressBars.ownedMaterial.title}`
         materialText.innerText = `${Math.round(progress.overTotal*100)}${string.userPanelText.progressBars.material.title}`
 
-        levelProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.level.text[0]}${Auth.userData.xp}${string.userPanelText.progressBars.level.text[1]}${Auth.userData.still}${string.userPanelText.progressBars.level.text[2]}${string.material.levels[Auth.userData.level + 1]}`);
+        levelProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.level.text[0]}${Auth.userData.xp}${string.userPanelText.progressBars.level.text[1]}${Auth.userData.still}${string.userPanelText.progressBars.level.text[2]}${string.material.levels[Auth.userData.level + 1].name}`);
         ownedMaterialProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.ownedMaterial.text[0]}${Math.round(progress.overOwned*100)}${string.userPanelText.progressBars.ownedMaterial.text[1]}`);
         materialProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.material.text[0]}${(progress.overTotal*100).toFixed(2)}${string.userPanelText.progressBars.material.text[1]}`);
     })

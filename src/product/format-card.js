@@ -54,7 +54,7 @@ export default (title, isPack, description, level, theme, firstTwoHangouts, teac
                     <h3 class="text-center">
                         ${title}
                     </h3>
-                    <span class="label label-primary">${string.material.levels[level]}</span>
+                    <span class="label label-primary">${string.material.levels[level].name}</span>
                     <span class="label label-success">${string.material.themes[theme].adjective}</span>
                     ${day ? `<span class="label label-info">${day}</span>` : ""}
                     ${hour ? `<span class="label label-info">${hour}</span>` : ""}

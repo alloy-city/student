@@ -1,11 +1,9 @@
-import { hasAccess, hasAccessLessons } from "./hasAccess"
-import { prepareChapterDescription } from './prepareChapterDescription'
+import { hasAccess, hasAccessLessons } from "./hasAccess";
+import { prepareChapterDescription } from './prepareChapterDescription';
+import { hideMaterialDisplayModeSwitch } from './chapterDisplayModeSwitch';
 
 function showChapters(themeId) {
-    /// #if DEBUG
-    // console.log(themeId)
-    // console.log(Auth.chapters[themeId])
-    /// #endif
+    hideMaterialDisplayModeSwitch();
 
     document.getElementById("material-display-history").innerHTML = ""
     Student.Content.setTheme(themeId)

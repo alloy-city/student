@@ -11,6 +11,10 @@ import { showChapters } from './showChapters'
 import { openChapter } from './openChapter'
 import { faq } from './faqs'
 import * as search from './search'
+import { addSwitchToUI } from './chapterDisplayModeSwitch'
+import { showLevels } from './showLevels'
+
+addSwitchToUI();
 
 let theme
 
@@ -38,6 +42,7 @@ export {
     formatClassToStudy,
     markUpResourceToStudy,
     showThemes,
+    showLevels,
     showChapters,
     openChapter,
     search
