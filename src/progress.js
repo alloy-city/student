@@ -72,21 +72,30 @@ function displayUserProgress() {
     get("xp/progression", progress => {
         progress.overLevel = Auth.userData.progressionOverLevel;
 
+        let pol = progress.overLevel*100;
+        if (pol > 100) pol = 100;
+
+        let poo = progress.overOwned*100;
+        if (poo > 100) poo = 100;
+
+        let pot = progress.overTotal*100;
+        if (pot > 100) pot = 100;
+
         levelProgressBar.setAttribute("aria-valuenow", `"${progress.overLevel}"`);
         ownedMaterialProgressBar.setAttribute("aria-valuenow", `"${progress.overOwned}"`);
         materialProgressBar.setAttribute("aria-valuenow", `"${progress.overTotal}"`);
 
-        levelProgressBar.setAttribute("style", `width: ${progress.overLevel*100}%;position:absolute;height:33%;`);
-        ownedMaterialProgressBar.setAttribute("style", `width: ${progress.overOwned*100}%;position:absolute;height:33%;`);
-        materialProgressBar.setAttribute("style", `width: ${progress.overTotal*100}%;position:absolute;height:33%;`);
+        levelProgressBar.setAttribute("style", `width: ${pol}%;position:absolute;height:33%;`);
+        ownedMaterialProgressBar.setAttribute("style", `width: ${poo}%;position:absolute;height:33%;`);
+        materialProgressBar.setAttribute("style", `width: ${pot}%;position:absolute;height:33%;`);
 
-        levelText.innerText = `${Math.round(progress.overLevel*100)}${string.userPanelText.progressBars.level.title}`
-        ownedMaterialText.innerText = `${Math.round(progress.overOwned*100)}${string.userPanelText.progressBars.ownedMaterial.title}`
-        materialText.innerText = `${Math.round(progress.overTotal*100)}${string.userPanelText.progressBars.material.title}`
+        levelText.innerText = `${Math.round(pol)}${string.userPanelText.progressBars.level.title}`
+        ownedMaterialText.innerText = `${Math.round(poo)}${string.userPanelText.progressBars.ownedMaterial.title}`
+        materialText.innerText = `${Math.round(pot)}${string.userPanelText.progressBars.material.title}`
 
         levelProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.level.text[0]}${Auth.userData.xp}${string.userPanelText.progressBars.level.text[1]}${Auth.userData.still}${string.userPanelText.progressBars.level.text[2]}${string.material.levels[Auth.userData.level + 1].name}`);
-        ownedMaterialProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.ownedMaterial.text[0]}${Math.round(progress.overOwned*100)}${string.userPanelText.progressBars.ownedMaterial.text[1]}`);
-        materialProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.material.text[0]}${(progress.overTotal*100).toFixed(2)}${string.userPanelText.progressBars.material.text[1]}`);
+        ownedMaterialProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.ownedMaterial.text[0]}${Math.round(poo)}${string.userPanelText.progressBars.ownedMaterial.text[1]}`);
+        materialProgressContainer.setAttribute("title", `${string.userPanelText.progressBars.material.text[0]}${(pot).toFixed(2)}${string.userPanelText.progressBars.material.text[1]}`);
     })
 }
 
