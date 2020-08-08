@@ -3,7 +3,7 @@ import { showThemes } from './showThemes';
 
 let UISwitch = document.getElementById("classroom-content-navigation-display-type-switch");
 
-let showingThemes = true;
+let showingThemes = false;
 
 let root = document.createElement("div");
 let text = document.createElement("p");
@@ -12,13 +12,13 @@ let swtch = document.createElement("div");
 let circle = document.createElement("div");
 
 text.innerText = string.material.groupingChaptersBy;
-textKeyWord.innerText = string.material.themeLowerCase;
+textKeyWord.innerText = string.material.levelLowerCase;
 
 root.setAttribute("style", "display:none;");
 text.setAttribute("style", "float:left;margin-right:8px;font-style:italic;color:#807f7d;");
 textKeyWord.setAttribute("style", "color:#2e92cc;font-weight:bold");
 swtch.setAttribute("style", "background-color:#c3c2bb;width:38px;height:26px;float:right;border-radius:13px;cursor:pointer;");
-setShowByThemeStyles();
+setShowByLevelStyles();
 
 text.appendChild(textKeyWord)
 swtch.appendChild(circle);

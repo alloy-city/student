@@ -17,7 +17,7 @@ text.applyText()
 UserDisplay.userDisplay()
 Product.getRecent()
 Settings.settingsText()
-Content.showThemes()
+Content.showLevels()
 Content.search.setSearchListener();
 Grenadine.setGrenadineLinks()
 ActiveTab.activeTab()

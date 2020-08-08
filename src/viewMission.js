@@ -26,7 +26,8 @@ function viewMission(lessonId, questionId, messageId){
                     if (res.message == "Message acknowledged.") {
                         let messageElement = document.getElementById(messageId)
                         if (messageElement){
-                            messageElement.remove()
+                            if (messageElement.parentNode.childElementCount == 2) messageElement.parentNode.remove();
+                            else messageElement.remove();
                         }
                     }
                 })
@@ -44,4 +45,24 @@ function viewMission(lessonId, questionId, messageId){
     });
 }
 
-export { viewMission }
+function consumeOneMessage(ids, i, limit, callback) {
+    if (i == limit) {
+        callback();
+        return;
+    }
+
+    let messageAcknowledgement = {
+        timestamp: new Date(),
+        message_id: ids[i]
+    }
+
+    post(messageAcknowledgement, "message/consume", res => {
+        consumeOneMessage(ids, i+1, limit, callback);
+    });
+}
+
+function consumeAll(messageIds, callback) {
+    consumeOneMessage(messageIds, 0, messageIds.length, callback);
+}
+
+export { viewMission, consumeAll }
